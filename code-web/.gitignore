@@ -9,7 +9,9 @@
 ######################
 # Node
 ######################
-/node/
+/.angular/**
+/node/**
+node/
 node_tmp/
 node_modules/
 npm-debug.log.*

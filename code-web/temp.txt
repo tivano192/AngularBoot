@@ -1,0 +1,16 @@
+{
+  "firstName": {
+    "condition1": {
+      "type": "contains",
+      "filter": "ready",
+      "filterType": "text"
+    },
+    "condition2": {
+      "type": "contains",
+      "filter": "done",
+      "filterType": "text"
+    },
+    "operator": "OR"
+  }
+}
+

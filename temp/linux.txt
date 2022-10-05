@@ -1,0 +1,73 @@
+echo $0 : qui je suis
+cd / aller à la racine
+pwd : affiche répertoire courant
+ls - l : lister les fichiers avec détail
+ls -la : lister tous les fichiers (cachés et autres) avec détail
+
+
+mv fichier1 fichier2: renouer le fichier1 en fichier2;
+mv fichier1 ./dossier/ déplacer le fichier1 vers le repertoire dossier
+./ : repertoire courant
+../ repertoire parent
+rm -fr : supprimer force récursif un dossier et ses sous dossiers
+cp fichier1 dossier/ : copier le fichier1 dans dossier
+cp fichier1 dossier/fichier2 : copier le fichier1 dans dossier et le renommé.
+                               La deuxième copie écrase l'ancien fichier
+cp -r dissier1/ dossier2 : copier le contenu du dossier1 dans le dossier2
+ln -s ./dossier1 ./dossier2 : créer un lien symbolique dossier2 qui pointe sur dossier1.
+
+vim fichier1 : éditer le fichier1
+cat fichier1 : afficher dans la console le contenu du fichier1 et quitter la commande.
+cat -n fichier1 : option numérotation des lignes
+less fichier1 : afficher la premier page dans la console sans quitter, possibilité de navigation :
+        Touche espace : afficher la page suivante,
+        Touche B : backward vers le haut (monter)
+        Touche F : forward vers le bas (descend)
+        Touche q : quitter le mode navigation.
+        Touche / : pour commencer une recherche, n pour continuer la recherche
+
+tail fichier1 : afficher les 10 dernière lignes du fichier1
+tail -F -n50 fichier1: visualisation des 50 dernières ligne en temps réel. CLTR C pour quitter.
+head -n50 fichier1: afficher les 50 premières lignes du fichier1
+
+du -h /dossier/ : afficher les tailles de fichiers du repertoire dossiers
+du -h -s /dossier/ : afficher la taille total du dossier
+df -h : afficher l'utilisation du disque
+
+chmod umask 777 fichier1 : donner les droits d'accès sur le fichier1
+chmod a+rw fichier1 :  accorder rw sur fichier1 pour tous all
+chmod g+rw fichier1 :  accorder rw sur fichier1 pour le group
+chmod u-rw fichier1 :  retirer rw sur fichier1 pour le owner
+chmod o+rw fichier1 :  accorder rw sur fichier1 pour les autres
+propritaire+group+other : les droits d'accès
+
+sudo: faire en tant que super user
+
+find : recherche de fichiers
+find /dossier -name *.txt. : recherche de fichiers par nom du fichier
+find /dossier -path /home/*/*.txt : recherche de fichiers par path du fichier.
+find /dossier -atime 1 : fichier accès il y a 1 jour
+                       : -ctime changé, -mtime modifié
+find /dossier -amin 1  : accédé il y a une minute
+find /dossier -size +15k : recherche les fichiers de plus de 15k
+
+grep : recherche à l'intérieur des fichiers
+grep "^#" fichier1 : recherche toutes les lignes qui commence par # dans fichier1
+grep -i "Toto" fichier1 : case insensitive
+grep -iv "Toto" fichier1 : case insensitive toutes les lignes qui ne comporte pas "toto"
+grep -n "Toto" * : lignes comporte "Toto" avec numérotation dans tous le fichiers du rep courant
+grep -r "Toto" * : recherche récursive
+
+redirection : executer une commande et redirige le résultat vers une autre sortie (console ou fichier)
+commande1 > /dossier/resultat.log : redirige et écrasé l'ancien fichier log
+commande1 >> /dossier/resultat.log : redirige et contacte avec l'ancien log
+
+pipe : prendre STDOUT d'une commande et la faire renvoyé vers la STDIN d'une autre commande
+Args : prend la sortie de STDOUT et la convertir en arguments d'une STDIN (utilisé dans pipe)
+
+tar -czvf fichier1.tar.gz . : créer fichier1.tar.gz à partir du repertoire courant, compresser gzip algo, visuel, fichier fichier1.tar.gz du contenu du dossier 1
+tar -czvf ./dossier1/fichier1.tar.gz . : créer fichier1.tar.gz à partir du repertoire courant dans le sous repertoire dossier1 
+tar -tzvf fichier1.tar.gz : visualiser sans decompresser le contenu du fichier.tar.gz
+tar -xzvf fichier1.tar.gz : extraire le contenu du ficher gz dans le repertoire courant.
+tar -xzvf fichier1.tar.gz /dossier : extraire le contenu du ficher gz dans le repertoire dossier.
+

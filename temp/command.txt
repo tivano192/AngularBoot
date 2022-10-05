@@ -1,0 +1,47 @@
+npm install bootstrap
+npm i --save jquery popper.js
+
+// Install webpack global
+sudo npm install -g webpack
+sudo npm install -g webpack-cli
+npm install -g cors
+
+// Link ag-grid
+https://github.com/ag-grid/ag-grid-angular-example/tree/master/systemjs_aot/docs/angular-examples/app
+
+java -Dapp.env=prod -Dapp.ctx=/myapp2 -Dapp.domain=localhost -Dapp.port=8085 -jar target/code-server-0.0.1-SNAPSHOT.jar
+
+// User Dir
+java -classpath "/Users/belindalounes/Desktop/work_intellig/NgBoot/spring-boot-angular/code-server/src/main/resources" -Dapp.env=prod -Dapp.ctx=/myapp2 -Dapp.domain=localhost -Dapp.port=8085 -jar target/code-server-0.0.1-SNAPSHOT.jar
+
+// Working directory :
+java -Duser.dir=/some/directory/
+
+// config file properties in two directory
+java -jar myproject.jar --spring.config.name=application,conf --spring.config.location=classpath:/external/properties/,classpath:/com/roufid/tutorial/configuration/
+java -jar myproject.jar --spring.config.location=classpath:/default.properties,classpath:/override.properties
+
+set spring.profiles.active=prod
+
+To add different files you can use the spring.config.location properties which takes a comma separated list of property files or file location (directories).
+-Dspring.config.location=your/config/dir/
+
+The one above will add a directory which will be consulted for application.properties files.
+-Dspring.config.location=classpath:job1.properties,classpath:job2.properties
+
+java -jar yourApp.jar --spring.profiles.active="override" --spring.config.location="file:/tmp/,classpath:/"
+java -jar target/spring-boot-property-demo-0.0.1-SNAPSHOT.war --spring.config.additional-location=classpath:file:src/test/resources/,classpath:file:src/test/resources/test.properties
+// mode debug
+java -jar myproject-0.0.1-SNAPSHOT.jar --debug
+
+// clean install
+clean -Dapp.ctx=/myapp2 -Dapp.env=prod install
+
+// run IDE , VM Option
+-Dapp.ctx=/myapp2 -Dapp.env=prod
+
+
+
+
+
+

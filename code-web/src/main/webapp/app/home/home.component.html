@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-3">
+    <span class="myProjectCss img-fluid rounded"></span>
+  </div>
+
+  <div class="col-md-9">
+    <h1 class="display-4"><span myTranslate="home.title">Welcome, Java myProjectCss!</span> (myApplication Sample Application)</h1>
+
+    <p class="lead" myTranslate="home.subtitle">This is your homepage</p>
+
+    <div [ngSwitch]="account !== null">
+      <div class="alert alert-success" *ngSwitchCase="true">
+        <span id="home-logged-message" *ngIf="account" myTranslate="home.logged.message" [translateValues]="{ username: account.login }"
+          >You are logged in as user "{{ account.login }}".</span
+        >
+      </div>
+
+      <div class="alert alert-warning" *ngSwitchCase="false">
+        <span myTranslate="global.messages.info.authenticated.prefix">If you want to </span>
+        <a class="alert-link" (click)="login()" myTranslate="global.messages.info.authenticated.link">sign in</a
+        ><span myTranslate="global.messages.info.authenticated.suffix"
+          >, you can try the default accounts:<br />- Administrator (login="admin" and password="admin") <br />- User (login="user" and
+          password="user").</span
+        >
+      </div>
+
+      <div class="alert alert-warning" *ngSwitchCase="false">
+        <span myTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
+        <a class="alert-link" routerLink="account/register" myTranslate="global.messages.info.register.link">Register a new account</a>
+      </div>
+    </div>
+
+    <p myTranslate="home.question">If you have any question on myApplication:</p>
+
+    <ul>
+      <li>
+        <a href="" target="_blank" rel="noopener noreferrer" myTranslate="home.link.homepage"
+          >myApplication homepage</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://stackoverflow.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          myTranslate="home.link.stackoverflow"
+          >myApplication on Stack Overflow</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          myTranslate="home.link.bugtracker"
+          >myApplication bug tracker</a
+        >
+      </li>
+      <li>
+        <a href="https://gitter.im" target="_blank" rel="noopener noreferrer" myTranslate="home.link.chat"
+          >myApplication public chat room</a
+        >
+      </li>
+      <li>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" myTranslate="home.link.follow"
+          >follow @ on Twitter</a
+        >
+      </li>
+    </ul>
+
+    <p>
+      <span myTranslate="home.like">If you like Application, don't forget to give us a star on</span>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+        >GitHub</a
+      >!
+    </p>
+  </div>
+</div>

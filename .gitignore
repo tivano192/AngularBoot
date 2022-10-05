@@ -136,6 +136,13 @@ fabric.properties
 /code-web/src/main/web/node_modules/
 /code-web/target/
 /code-server/target/
+/code-server/target/**
+/code-server/*.impl
+/code-transverse/target/
+/code-transverse/target/**
+/code-transverse/*.impl
+/code-transverse/*.impl
 /code-web/src/main/web/webpack-cache/
 /.idea/
 /.idea/workspace.xml
+*.iml
